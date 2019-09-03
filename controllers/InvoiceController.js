@@ -23,7 +23,7 @@ Invoice.newInvoice = () => {
 };
 
 /* requete pour obtenir la liste complète de la table facture */
-Invoice.findAllInvoice = () => {
+Invoice.findAllInvoices = () => {
     return new Promise((resolve, reject) => {
         connection.query('Select * From invoice', (err, res) => {
             if (err) return reject(err)

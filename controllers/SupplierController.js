@@ -4,14 +4,15 @@ const connection = require('../db');
 let Supplier = {};
 
 /* requete pour obtenir la liste complète de la table fournisseur */
-Supplier.findOneSupplier = id_supplier => {
+Supplier.findAllSuppliers = () => {
     return new Promise((resolve, reject) => {
-        connection.query('Select * From supplier Where id_supplier = ?', [id_supplier], (err, res) => {
+        connection.query('Select * From supplier', (err, res) => {
             if (err) return reject(err)
             return resolve(res)
         });
     });
 };
+
 
 /* requete pour récuperer une fournisseur spécifique grâce à un id*/
 Supplier.findOneSupplier = id_supplier => {
