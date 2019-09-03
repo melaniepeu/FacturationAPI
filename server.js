@@ -15,8 +15,8 @@ console.log('Invoice tool RESTful API server started on: ' + port);
 
 //Import des routes
 const router = require('./app/routes/appRoutes');
-const supplierRouter = require('./app/routes/appRoutes');
-const invoiceRouter = require('./app/routes/appRoutes');
+const supplierRouter = require('./app/routes/SupplierRoutes');
+const invoiceRouter = require('./app/routes/InvoiceRoutes');
 
 app.use('/api/v1/', router);
 app.use('/api/v1/suppliers', supplierRouter);
