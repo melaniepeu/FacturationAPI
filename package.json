@@ -1,0 +1,29 @@
+{
+  "name": "facturation-server",
+  "version": "1.0.0",
+  "description": "Outil de Gestion de Factures - Trecobat",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "npx nodemon server.js -w server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melaniepeu/projetFacturationTrecobat.git"
+  },
+  "author": "Mélanie Peuziat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melaniepeu/projetFacturationTrecobat/issues"
+  },
+  "homepage": "https://github.com/melaniepeu/projetFacturationTrecobat#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
