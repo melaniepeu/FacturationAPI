@@ -11,10 +11,10 @@ Invoice.newInvoice = () => {
             invoice.price_invoice,
             invoice.tax_invoice,
             invoice.status_invoice,
-            invoice.id_supplier,
-            id_invoice,
+            invoice.id,
+            id,
         ];
-        const query = 'INSERT INTO invoice (date_invoice, price_invoice, tax_invoice, status_invoice, id_supplier) VALUES (?, ?, ?, ?, ?)';
+        const query = 'INSERT INTO invoice (date_invoice, price_invoice, tax_invoice, status_invoice, id) VALUES (?, ?, ?, ?, ?)';
         connection.query(query, params, (err, res) => {
             if (err) return reject(err);
             resolve(res);
@@ -33,9 +33,9 @@ Invoice.findAllInvoices = () => {
 };
 
 /* requete pour récuperer une facture spécifique grâce à un id*/
-Invoice.findOneInvoice = id_invoice => {
+Invoice.findOneInvoice = id => {
     return new Promise((resolve, reject) => {
-        connection.query('Select * From invoice Where id_invoice = ?', [id_invoice], (err, res) => {
+        connection.query('Select * From invoice Where id = ?', [id], (err, res) => {
             if (err) return reject(err)
             return resolve(res)
         });
@@ -49,10 +49,10 @@ Invoice.updateInvoice = () => {
             invoice.price_invoice,
             invoice.tax_invoice,
             invoice.status_invoice,
-            invoice.id_supplier,
-            id_invoice,
+            invoice.id,
+            id,
         ];
-        'UPDATE invoice SET date_invoice = ?, price_invoice = ?, tax_invoice = ?, status_invoice = ?, id_supplier = ?, WHERE id_invoice = ?';
+        'UPDATE invoice SET date_invoice = ?, price_invoice = ?, tax_invoice = ?, status_invoice = ?, id = ?, WHERE id = ?';
         connection.query(query, params, (err, res) => {
             if (err) return reject(err);
             resolve(res);
@@ -61,9 +61,9 @@ Invoice.updateInvoice = () => {
 };
 
 /* requete pour la suppression d'une facture*/
-Invoice.deleteInvoice = id_invoice => {
+Invoice.deleteInvoice = id => {
     return new Promise((resolve, reject) => {
-        connection.query('DELETE FROM facture WHERE id_invoice = ?', [id_invoice], (err, res) => {
+        connection.query('DELETE FROM facture WHERE id = ?', [id], (err, res) => {
             if (err) return reject(err);
             resolve(res);
         });
