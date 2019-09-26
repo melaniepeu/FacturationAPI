@@ -45,7 +45,7 @@ Supplier.newSupplier = (supplier) => {
 };
 
 /* requete pour la modification d'un fournisseur */
-Supplier.updateSupplier = (supplier, id) => {
+Supplier.editSupplier = (supplier, id) => {
     return new Promise((resolve, reject) => {
         const params = [
             supplier.nom_supplier,

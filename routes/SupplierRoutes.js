@@ -39,7 +39,7 @@ supplierRouter.post('/', async (req, res) => {
 supplierRouter.put('/:id', async (req, res) => {
   try {
     const supplier = req.body;
-    let result = await Supplier.updateSupplier(supplier, req.params.id);
+    let result = await Supplier.editSupplier(supplier, req.params.id);
     res.json(result);
   } catch (err) {
     console.log(err);
