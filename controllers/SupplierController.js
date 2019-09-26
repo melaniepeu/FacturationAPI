@@ -25,7 +25,7 @@ Supplier.findOneSupplier = id => {
 };
 
 /* requete pour la creation d'une fournisseur */
-Supplier.newSupplier = () => {
+Supplier.newSupplier = (supplier) => {
     return new Promise((resolve, reject) => {
         const params = [
             supplier.nom_supplier,
@@ -43,8 +43,9 @@ Supplier.newSupplier = () => {
         });
     });
 };
+
 /* requete pour la modification d'un fournisseur */
-Supplier.updateFournisseur = (supplier, id) => {
+Supplier.updateSupplier = (supplier, id) => {
     return new Promise((resolve, reject) => {
         const params = [
             supplier.nom_supplier,
@@ -56,7 +57,7 @@ Supplier.updateFournisseur = (supplier, id) => {
             supplier.iban_supplier,
             id,
         ];
-        'UPDATE supplier SET nom_supplier = ?, adress_supplier = ?, pc_supplie = ?, city_supplier = ?, country_supplier = ?, phone_supplier = ?, iban_supplier = ? WHERE id = ?';
+        'UPDATE supplier SET nom_supplier = ?, adress_supplier = ?, pc_supplier = ?, city_supplier = ?, country_supplier = ?, phone_supplier = ?, iban_supplier = ? WHERE id = ?';
         connection.query(query, params, (err, res) => {
             if (err) return reject(err);
             resolve(res);
@@ -64,7 +65,7 @@ Supplier.updateFournisseur = (supplier, id) => {
     });
 };
 
-/* requete pour la suppression d'une fournisseur*/
+/* requete pour la suppression d'un fournisseur*/
 Supplier.deleteSupplier = id => {
     return new Promise((resolve, reject) => {
         connection.query('DELETE FROM supplier WHERE id = ?', [id], (err, res) => {
