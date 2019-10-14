@@ -57,7 +57,7 @@ Supplier.editSupplier = (supplier, id) => {
             supplier.iban_supplier,
             id,
         ];
-        'UPDATE supplier SET nom_supplier = ?, adress_supplier = ?, pc_supplier = ?, city_supplier = ?, country_supplier = ?, phone_supplier = ?, iban_supplier = ? WHERE id = ?';
+        const query = 'UPDATE supplier SET nom_supplier = ?, adress_supplier = ?, pc_supplier = ?, city_supplier = ?, country_supplier = ?, phone_supplier = ?, iban_supplier = ? WHERE id = ?';
         connection.query(query, params, (err, res) => {
             if (err) return reject(err);
             resolve(res);

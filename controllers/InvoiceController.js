@@ -52,7 +52,7 @@ Invoice.updateInvoice = () => {
             invoice.id,
             id,
         ];
-        'UPDATE invoice SET date_invoice = ?, price_invoice = ?, tax_invoice = ?, status_invoice = ?, id = ?, WHERE id = ?';
+        const query = 'UPDATE invoice SET date_invoice = ?, price_invoice = ?, tax_invoice = ?, status_invoice = ?, id = ?, WHERE id = ?';
         connection.query(query, params, (err, res) => {
             if (err) return reject(err);
             resolve(res);
